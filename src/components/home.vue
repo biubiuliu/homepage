@@ -10,12 +10,12 @@
             </li>
         </ul>
         <form action="" id="searchBar" class="searchBar">
-            <ul id="searchEnginLogo" class="searchEnginLogo">
+            <ul id="searchEnginLogo"  class="searchEnginLogo">
                 <li class="active">
-                    <img src="../assets/google.svg" alt="google">
+                    <img @click="switchSearchEngin" src="../assets/google.svg" alt="google">
                 </li>
                 <li>
-                    <img src="../assets/baidu.svg" alt="baidu">
+                    <img @click="switchSearchEngin" src="../assets/baidu.svg" alt="baidu">
                 </li>
             </ul>
             <input type="text" id="inputBar" placeholder = '点击左边图标切换搜索引擎'>
@@ -31,7 +31,41 @@ export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      ifSwitch: false
+    }
+  },
+  methods: {
+    switchSearchEngin () {
+    // 搜索引擎默认是google
+      let searchEnginLogo = document.getElementById('searchEnginLogo')
+      let googleLogo = document.querySelector('#searchEnginLogo li:nth-child(1)')
+      let baiduLogo = document.querySelector('#searchEnginLogo li:nth-child(2)')
+      let googlePic = document.querySelector('#searchEnginPic li:nth-child(1)')
+      let baiduPic = document.querySelector('#searchEnginPic li:nth-child(2)')
+      let inputBar = document.getElementById('inputBar')
+      searchEnginLogo.setAttribute('data-engin', 'google')
+      searchEnginLogo.onclick = () => {
+        if (!this.ifSwitch) {
+          // google --> baidu
+          googleLogo.classList.remove('active')
+          baiduLogo.classList.add('active')
+          googlePic.classList.remove('active')
+          baiduPic.classList.add('active')
+          searchEnginLogo.setAttribute('data-engin', 'baidu')
+          inputBar.placeholder = '众里寻他千百度，蓦然回首，那人却在灯火阑珊处'
+        } else {
+          // baidu --> google
+          baiduLogo.classList.remove('active')
+          googleLogo.classList.add('active')
+          baiduPic.classList.remove('active')
+          googlePic.classList.add('active')
+          searchEnginLogo.setAttribute('data-engin', 'google')
+          inputBar.placeholder = '昨夜西风凋碧树，独上高楼，望尽天涯路'
+        }
+        this.ifSwitch = !this.ifSwitch
+        console.log(this.ifSwitch)
+      }
     }
   }
 }
