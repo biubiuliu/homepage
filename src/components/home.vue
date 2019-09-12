@@ -46,14 +46,14 @@ export default {
           title: 'Node.js',
           subhead: '中文文档',
           url: 'https://www.nodeapp.cn/',
-          img: '../../../static/img/nodejss.png',
+          img: '../../../static/img/nodejs.png',
           content: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。'
         },
         {
           title: 'Vue.js',
           subhead: '中文文档',
           url: 'https://vuejs.bootcss.com/',
-          img: '../../../static/img/vuejss.png',
+          img: '../../../static/img/vuejs.png',
           content: 'Vue.js - 是一套构建用户界面的渐进式框架。'
         },
         {
@@ -67,7 +67,7 @@ export default {
           title: 'ESLint',
           subhead: 'JavaScript 代码检查工具',
           url: 'https://cn.eslint.org/',
-          img: '../../../static/img/eslints.png',
+          img: '../../../static/img/eslint.png',
           content: 'ESLint 是一个插件化并且可配置的 JavaScript 语法规则和代码风格的检查工具。ESLint 能够帮你轻松写出高质量的 JavaScript 代码。'
         },
         {
