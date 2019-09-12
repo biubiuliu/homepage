@@ -206,7 +206,7 @@ export default {
         {
           title: 'php工具箱',
           subhead: 'php程序员工具箱',
-          url: 'https://nginx.bootcss.com',
+          url: 'http://tool.php.cn/',
           img: '../../../static/img/phptools.jpg',
           content: 'php程序员工具箱是迄今为止全网wei一一款php程序员的专属工具箱，集合了php环境搭建、在线小工具、原生手册、文字与视频教程、问答社区等。'
         },
