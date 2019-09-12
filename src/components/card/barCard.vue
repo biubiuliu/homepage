@@ -62,6 +62,10 @@ export default {
 .bar_card_subhead{
   margin-top: 5px;
   font-size: 150% ;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
   color: #80818379
 }
 .bar_card_content{
