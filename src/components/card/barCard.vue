@@ -2,7 +2,7 @@
   <div class="card_body">
     <div class="bar_card" v-for="(item,index) in cardData" :key="index" v-on:click="handCardRouter(item)" >
       <div class="bar_card_box">
-        <img class="bar_card_img" :src="item.img" alt="图片不存在">
+        <img class="bar_card_img" v-lazy="item.img" :style="{'background':colorList[index] }"  alt="图片不存在">
         <div class="bar_card_title">{{item.title}}</div>
         <div class="bar_card_subhead">{{item.subhead}}</div>
         <p class="bar_card_content">{{item.content}}</p>
@@ -19,12 +19,38 @@ export default {
   },
   data () {
     return {
-
+      colorArr: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'],
+      colorList: []
     }
+  },
+  created () {
+    for (let i = 0; i < this.cardData.length; i++) {
+      this.colorList.push(this.method1())
+    }
+    console.log(this.colorList)
   },
   methods: {
     handCardRouter (item) {
       this.$emit('handCardRouter', item)
+    },
+    random (min, max) {
+      if (isNaN(min) || isNaN(max)) {
+        return null
+      }
+      if (min > max) {
+        min ^= max
+        max ^= min
+        min ^= max
+      }
+      return (Math.random() * (max - min) | 0) + min
+    },
+    method1 () {
+      var color = '#'
+      for (var i = 0; i < 6; i++) {
+        color += this.colorArr[this.random(0, 16)]
+      }
+      console.log(color)
+      return color
     }
   }
 }
@@ -52,6 +78,7 @@ export default {
 .bar_card_img{
   width: 100%;
   height: 40%;
+  background: #6b82ac
 
 }
 .bar_card_title{
