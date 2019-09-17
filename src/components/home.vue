@@ -85,6 +85,20 @@ export default {
           content: 'gitHub是一个面向开源及私有软件项目的托管平台,因为只支持git 作为唯一的版本库格式进行托管,故名gitHub。'
         },
         {
+          title: 'iview',
+          subhead: 'iview-ui',
+          url: 'https://www.iviewui.com/',
+          img: '../../../static/img/iview.png',
+          content: '一套基于 Vue.js 的高质量UI 组件库'
+        },
+        {
+          title: 'element',
+          subhead: 'element-ui',
+          url: 'https://element.eleme.cn/#/zh-CN',
+          img: '../../../static/img/element-ui.png',
+          content: 'Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库'
+        },
+        {
           title: 'jQuery API',
           subhead: '中文手册',
           url: 'https://www.jquery123.com/',
