@@ -19,8 +19,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   min-width: 900px;
+
 }
-html {font-size: 62.5%!important; /* 10÷16=62.5% */}
+html {font-size: 62.5%!important; overflow: hidden /* 10÷16=62.5% */}
 @media only screen and (min-width: 481px){
     html {
         font-size: 94%!important; /* 15.04÷16=94% */

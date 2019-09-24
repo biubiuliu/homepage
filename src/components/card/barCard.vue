@@ -1,7 +1,7 @@
 <template>
-  <div class="card_body">
+  <div class="card_body" >
     <div class="bar_card" v-for="(item,index) in cardData" :key="index" v-on:click="handCardRouter(item)" >
-      <div class="bar_card_box">
+      <div class="bar_card_box" :style=editBtn >
         <img class="bar_card_img" v-lazy="item.img" :style="{'background':colorList[index] }"  alt="图片不存在">
         <div class="bar_card_title">{{item.title}}</div>
         <div class="bar_card_subhead">{{item.subhead}}</div>
@@ -15,7 +15,8 @@
 export default {
   name: 'barcard',
   props: {
-    cardData: Array
+    cardData: Array,
+    editBtn: Object
   },
   data () {
     return {
@@ -27,7 +28,7 @@ export default {
     for (let i = 0; i < this.cardData.length; i++) {
       this.colorList.push(this.method1())
     }
-    console.log(this.colorList)
+    // console.log(this.colorList)
   },
   methods: {
     handCardRouter (item) {
@@ -49,7 +50,7 @@ export default {
       for (var i = 0; i < 6; i++) {
         color += this.colorArr[this.random(0, 16)]
       }
-      console.log(color)
+      // console.log(color)
       return color
     }
   }

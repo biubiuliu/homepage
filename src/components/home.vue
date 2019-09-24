@@ -20,11 +20,12 @@
             </ul>
             <input type="text" id="inputBar" placeholder = '点击左边图标切换搜索引擎'>
             <button id="searchBtn" class="searchBtn"></button>
-            <button id="searchBtn" class="searchBtn"></button>
         </form>
     </header>
     <div id="main">
-      <bar-card @handCardRouter='handCardRouter' :cardData='cardData'></bar-card>
+      <button  @click="editBtn">编辑</button>
+      <button  @click="successBtn">完成</button>
+      <bar-card @handCardRouter='handCardRouter' :editBtn='editBtnData' :cardData='cardData'></bar-card>
     </div>
   </div>
 </template>
@@ -41,6 +42,16 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       ifSwitch: false,
       ifInputting: false,
+      editBtnData: {
+        position: 'relative',
+        transform: ' rotate(0deg)',
+        left: '-2px',
+        top: '-1px'
+      },
+      leftArr: [-1, 0, 1, 2],
+      topArr: [-1, 0, 1, 2],
+      rotateArr: [-1, 0, 1],
+      setIntervalData: '',
       cardData: [
         {
           title: 'Node.js',
@@ -239,7 +250,6 @@ export default {
           content: '斗鱼- 每个人的直播平台提供高清、快捷、流畅的视频直播和游戏赛事直播服务,包含英雄联盟lol直播、穿越火线cf直播、dota2直播、美女直播等各类热门游戏赛事直播和各种...'
         }
       ]
-
     }
   },
   mounted () {
@@ -247,6 +257,21 @@ export default {
     this.switchSearchEngin()
   },
   methods: {
+    getNum (num) {
+      var getOne = Math.ceil(Math.random() * num.length)
+      return num[getOne]
+    },
+    // 编辑
+    editBtn () {
+      this.setIntervalData = setInterval(() => {
+        this.editBtnData.left = this.getNum(this.leftArr) + 'px'
+        this.editBtnData.top = this.getNum(this.topArr) + 'px'
+        this.editBtnData.transform = 'rotate(' + this.getNum(this.rotateArr) + 'deg)'
+      }, 20)
+    },
+    successBtn () {
+      clearInterval(this.setIntervalData)
+    },
     listenToUser () {
       // ifInputting作为一个开关
       this.ifInputting = false
@@ -320,7 +345,7 @@ export default {
     },
     handCardRouter (item) {
       window.open(item.url, '_blank')
-      console.log(item)
+      // console.log(item)
     }
   }
 }
@@ -413,8 +438,10 @@ header .searchBar .searchEnginLogo li.active{
 }
 #main{
   width: 80%;
-  height: auto;
+  height: 70vh;
   margin: 0 auto;
-  padding: 10px
+  padding: 10px;
+  overflow-y: scroll
 }
+#main::-webkit-scrollbar {display: none;}
 </style>
