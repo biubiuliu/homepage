@@ -248,6 +248,13 @@ export default {
           url: 'https://www.douyu.com/',
           img: '../../../static/img/douyu.jpg',
           content: '斗鱼- 每个人的直播平台提供高清、快捷、流畅的视频直播和游戏赛事直播服务,包含英雄联盟lol直播、穿越火线cf直播、dota2直播、美女直播等各类热门游戏赛事直播和各种...'
+        },
+        {
+          title: '面试题',
+          subhead: '面试题',
+          url: 'https://github.com/Advanced-Frontend/Daily-Interview-Question/blob/master/datum/summary.md',
+          img: '',
+          content: '前端面试题及答案汇总'
         }
       ]
     }
