@@ -1,31 +1,48 @@
 <template>
   <div class="hello">
-      <header>
-        <ul id="searchEnginPic" class="searchEnginPic">
-            <li class="active">
-                <a href="https://www.google.com.hk/" target="_blank"><img src="../assets/google.png" alt="google"></a>
-            </li>
-            <li>
-                <a href="https://www.baidu.com/" target="_blank"><img src="../assets/baidu.gif" alt="百度一下"></a>
-            </li>
+    <header>
+      <ul id="searchEnginPic"
+          class="searchEnginPic">
+        <li class="active">
+          <a href="https://www.google.com.hk/"
+             target="_blank"><img src="../assets/google.png"
+                 alt="google"></a>
+        </li>
+        <li>
+          <a href="https://www.baidu.com/"
+             target="_blank"><img src="../assets/baidu.gif"
+                 alt="百度一下"></a>
+        </li>
+      </ul>
+      <form action=""
+            id="searchBar"
+            class="searchBar">
+        <ul id="searchEnginLogo"
+            class="searchEnginLogo">
+          <li class="active">
+            <img @click="switchSearchEngin"
+                 src="../assets/google.svg"
+                 alt="google">
+          </li>
+          <li>
+            <img @click="switchSearchEngin"
+                 src="../assets/baidu.svg"
+                 alt="baidu">
+          </li>
         </ul>
-        <form action="" id="searchBar" class="searchBar">
-            <ul id="searchEnginLogo"  class="searchEnginLogo">
-                <li class="active">
-                    <img @click="switchSearchEngin" src="../assets/google.svg" alt="google">
-                </li>
-                <li>
-                    <img @click="switchSearchEngin" src="../assets/baidu.svg" alt="baidu">
-                </li>
-            </ul>
-            <input type="text" id="inputBar" placeholder = '点击左边图标切换搜索引擎'>
-            <button id="searchBtn" class="searchBtn"></button>
-        </form>
+        <input type="text"
+               id="inputBar"
+               placeholder='点击左边图标切换搜索引擎'>
+        <button id="searchBtn"
+                class="searchBtn"></button>
+      </form>
     </header>
     <div id="main">
-      <button  @click="editBtn">编辑</button>
-      <button  @click="successBtn">完成</button>
-      <bar-card @handCardRouter='handCardRouter' :editBtn='editBtnData' :cardData='cardData'></bar-card>
+      <button @click="editBtn">编辑</button>
+      <button @click="successBtn">完成</button>
+      <bar-card @handCardRouter='handCardRouter'
+                :editBtn='editBtnData'
+                :cardData='cardData'></bar-card>
     </div>
   </div>
 </template>
@@ -236,6 +253,13 @@ export default {
           content: 'php程序员工具箱是迄今为止全网wei一一款php程序员的专属工具箱，集合了php环境搭建、在线小工具、原生手册、文字与视频教程、问答社区等。'
         },
         {
+          title: 'carbon',
+          subhead: 'carbon',
+          url: 'https://carbon.now.sh/',
+          img: 'http://www.w3.org/2000/svg',
+          content: '创建并共享源代码的精美图片,开始输入或将文件放入文本区域以开始使用。'
+        },
+        {
           title: '私人影院',
           subhead: 'move',
           url: 'http://www.aaqqw.com/',
@@ -320,7 +344,7 @@ export default {
       }
     },
     switchSearchEngin () {
-    // 搜索引擎默认是google
+      // 搜索引擎默认是google
       let searchEnginLogo = document.getElementById('searchEnginLogo')
       let googleLogo = document.querySelector('#searchEnginLogo li:nth-child(1)')
       let baiduLogo = document.querySelector('#searchEnginLogo li:nth-child(2)')
@@ -360,95 +384,102 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-*{margin: 0;padding:0;}
-ul{list-style: none;}
-.clearfix::after{
-    content: '';
-    display: block;
-    clear: both;
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 /* header */
-header{
-    width: 720px;
-    height: 44px;
-    margin: 100px auto 50px;
+header {
+  width: 720px;
+  height: 44px;
+  margin: 100px auto 50px;
 }
-header .searchEnginPic{
-    float: left;
-    width: 120px;
-    height: 44px;
+header .searchEnginPic {
+  float: left;
+  width: 120px;
+  height: 44px;
 }
-header .searchEnginPic li{
-    display: none;
+header .searchEnginPic li {
+  display: none;
 }
-header .searchEnginPic li.active{
-    display: inline-block;
+header .searchEnginPic li.active {
+  display: inline-block;
 }
-header .searchEnginPic li:nth-child(1) img{
-    width: 120px;
-    padding: 2.5px 0;
+header .searchEnginPic li:nth-child(1) img {
+  width: 120px;
+  padding: 2.5px 0;
 }
-header .searchEnginPic li:nth-child(2) img{
-    width: 120px;
-    height: 44px;
+header .searchEnginPic li:nth-child(2) img {
+  width: 120px;
+  height: 44px;
 }
 
-header .searchBar{
-    float: right;
-    width: 580px;
-    height: 44px;
-    border-radius: 24px;
-    position: relative;
-    background: #fff;
+header .searchBar {
+  float: right;
+  width: 580px;
+  height: 44px;
+  border-radius: 24px;
+  position: relative;
+  background: #fff;
 }
-header .searchBar:hover{
-    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
-    border-color: rgba(223,225,229,0);
+header .searchBar:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
 }
-header .searchBar .searchEnginLogo{
-    position: absolute;
-    left: 10px;
-    width: 24px;
-    height: 44px;
-    cursor: pointer;
+header .searchBar .searchEnginLogo {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 44px;
+  cursor: pointer;
 }
-header .searchBar .searchEnginLogo li{
-    display: none;
+header .searchBar .searchEnginLogo li {
+  display: none;
 }
-header .searchBar .searchEnginLogo li.active{
-    display: inline-block;
+header .searchBar .searchEnginLogo li.active {
+  display: inline-block;
 }
-.searchBar .searchEnginLogo li img{
-    width: 24px;
-    height: 24px;
-    padding: 10px 0;
+.searchBar .searchEnginLogo li img {
+  width: 24px;
+  height: 24px;
+  padding: 10px 0;
 }
-.searchBar input{
-    position: absolute;
-    left: 46px;
-    top: 10%;
-    width: 505px;
-    height: 80%;
-    border: none;
-    outline: none;
+.searchBar input {
+  position: absolute;
+  left: 46px;
+  top: 10%;
+  width: 505px;
+  height: 80%;
+  border: none;
+  outline: none;
 }
-.searchBar .searchBtn{
-    position: absolute;
-    right: 6px;
-    top: 7px;
-    width: 30px;
-    height: 30px;
-    background: url(../assets/search-btn.png) center center no-repeat;
-    cursor: pointer;
-    border: none;
-    outline: none;
+.searchBar .searchBtn {
+  position: absolute;
+  right: 6px;
+  top: 7px;
+  width: 30px;
+  height: 30px;
+  background: url(../assets/search-btn.png) center center no-repeat;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
-#main{
+#main {
   width: 80%;
   height: 70vh;
   margin: 0 auto;
   padding: 10px;
-  overflow-y: scroll
+  overflow-y: scroll;
 }
-#main::-webkit-scrollbar {display: none;}
+#main::-webkit-scrollbar {
+  display: none;
+}
 </style>
