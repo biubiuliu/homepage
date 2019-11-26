@@ -287,6 +287,14 @@ export default {
             'https://github.com/Advanced-Frontend/Daily-Interview-Question/blob/master/datum/summary.md',
           img: '',
           content: '前端面试题及答案汇总'
+        },
+        {
+          title: '免费图片上传',
+          subhead: '免费图片上传',
+          url:
+            'https://imgchr.com/',
+          img: '../../../static/img/imgchi.png',
+          content: '路过图床-高速稳定的图片上传和外链服务全球CDN加速, 最大单张支持 10 MB, 支持批量上传本站启用自动检测技术'
         }
       ]
     }
