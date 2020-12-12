@@ -55,7 +55,7 @@ export default {
       cardData: [
         {
           title: 'Node.js',
-          subhead: '中文文档222',
+          subhead: '中文文档3223',
           url: 'https://www.nodeapp.cn/',
           img: '../../../static/img/nodejs.png',
           content:
