@@ -55,7 +55,7 @@ export default {
       cardData: [
         {
           title: 'Node.js',
-          subhead: '中文文档',
+          subhead: '中文文档222',
           url: 'https://www.nodeapp.cn/',
           img: '../../../static/img/nodejs.png',
           content:
@@ -63,7 +63,7 @@ export default {
         },
         {
           title: 'Vue.js',
-          subhead: '中文文档2',
+          subhead: '中文文档',
           url: 'https://vuejs.bootcss.com/',
           img: '../../../static/img/vuejs.png',
           content: 'Vue.js - 是一套构建用户界面的渐进式框架。'
