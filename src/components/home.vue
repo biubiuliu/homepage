@@ -52,6 +52,7 @@ export default {
       topArr: [-1, 0, 1, 2],
       rotateArr: [-1, 0, 1],
       setIntervalData: '',
+      // Personal access tokens f37f8651e75dd46fc9e2dd1a3ffecb7e1294b33e
       cardData: [
         {
           title: 'Node.js',
