@@ -63,7 +63,7 @@ export default {
         },
         {
           title: 'Vue.js',
-          subhead: '中文文档',
+          subhead: '中文文档2',
           url: 'https://vuejs.bootcss.com/',
           img: '../../../static/img/vuejs.png',
           content: 'Vue.js - 是一套构建用户界面的渐进式框架。'
